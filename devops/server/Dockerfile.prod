@@ -1,16 +1,10 @@
+FROM node:14.17.0-alpine3.12
 
-FROM node:14.17.0-alpine3.12 AS build
-
-WORKDIR /usr/src
-COPY package.json yarn.lock tsconfig.json tsconfig.build.json ./
+WORKDIR /app
+COPY package.json yarn.lock tsconfig.json  tsconfig.build.json ./
 RUN yarn install --ignore-platform
-RUN yarn build
 COPY . .
-
-
-FROM node:14.17.0-alpine3.12 AS prod
-WORKDIR /usr/src
-COPY --from=build /usr/src .
+RUN yarn build
 EXPOSE 3000
 CMD ["yarn", "start:prod"]
 
