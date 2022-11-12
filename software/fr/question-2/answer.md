@@ -2,14 +2,14 @@
 
 ## Réponse 2 - Git (1 points)
 
-a)
+a) `git show <commit-SHA>`
 
-b) 
+b) `git stash` puis `git checkout <branche>`
 
-c) 
+c) `git clone https://cqi.git.com/repository.git`
 
-d)
+d) `git checkout -b feature/action` puis `git checkout feature/action`
 
-e) 
+e) `git push`
 
-f) 
+f) `git merge refactor/pre-cqi`

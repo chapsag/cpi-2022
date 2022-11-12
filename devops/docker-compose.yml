@@ -1,3 +1,38 @@
-# TODO
-
-
+version: '3'
+services:
+  mongo-db:
+    image: mongo:3.6
+    container_name: mongo-db
+    volumes:
+      - mongo-db:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+  server:
+    image: server/prod
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    command: yarn start
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo-db
+  client:
+    image: client/prod
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    command: nginx -g 'daemon off;'
+    ports:
+      - 80:80
+    depends_on:
+      - server
+volumes:
+  mongo-db:

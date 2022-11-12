@@ -2,18 +2,18 @@
 
 ## Réponse 5 - Choix de cycle de vie (2 points)
 
-a) 
+a) Le cycle de vie discipliné en cascade serait plus approprié.
 
-b) 
+b) Le cycle de vie agile incrémentale serait plus approprié.
 
-c) 
+c) Le cycle de vie agile transformationnelle serait plus approprié.
 
-d) 
+d) Le cycle de vie discipliné en cascade serait plus approprié.
 
-e)
+e) Le cycle de vie agile incrémentale serait plus approprié.
 
-f) 
+f) Le cycle de vie agile incrémentale serait plus approprié.
 
-g) 
+g) Le cycle de vie agile transformationnelle serait plus approprié.
 
-h) 
+h) Le cycle de vie discipliné en spirale serait plus approprié.
