@@ -51,7 +51,7 @@ export default function Home() {
             bgSize="cover"
             bgColor="brand2.400">
 
-                <Heading as="h1" size="xl" color="brand2.800" m={10}>Billeterie</Heading>
+                <Heading as="h1" size="xl" color="brand2.800" mt={10}>Billeterie</Heading>
 
                 <VStack mt={10}>
                 {data.packages.map((item, i) => (
@@ -74,13 +74,29 @@ export default function Home() {
                         textAlign="center"
                         borderRadius={10}
 
-                        ><Link  href="./billeterie" >Plus d'infos</Link></Heading>
+                        ><Link  href="./billeterie" >Acheter</Link></Heading>
                         </VStack>
                     </HStack>
                 {i + 1 < data.packages.length ? <Box minH="2px" minW="92%" borderRadius={1} bgColor="brand2.800"></Box> : <></>}
                     </>
                 ))}
                 </VStack>
+
+                <Heading as="h1" size="xl" color="brand2.800" m={10}>Panier</Heading>
+
+                <VStack w="70%" mb={20}>
+                    <HStack w="100%">
+                        <Heading w={40} size="md" textAlign="left" mr={5}>The Yam</Heading>
+                        <Heading size="sm" textAlign="left" mr={5}>Avec ce paquet, obtenez accès à tous les événements du festival qui débutent après 17h.</Heading>
+                        <Heading w={40} size="md" textAlign="right">1</Heading>
+                    </HStack>
+                    <HStack w="100%">
+                        <Heading w={40} size="md" textAlign="left" mr={5}>The Petite Patate</Heading>
+                        <Heading size="sm" textAlign="left" mr={5}>Le billet idéal pour les familles. Donne accès aux spectacles avant 21h et à tous les ateliers.</Heading>
+                        <Heading w={40} size="md" textAlign="right">2</Heading>
+                    </HStack>
+                </VStack>
+
 
             </Flex>
             <Footer></Footer>
