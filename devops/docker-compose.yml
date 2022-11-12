@@ -1,3 +1,20 @@
-# TODO
-
-
+version: '3'
+services:
+  server:
+    image: server/prod
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    command: yarn start
+    ports:
+      - 3000:3000
+  client:
+    image: client/prod
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    command: nginx -g 'daemon off;'
+    ports:
+      - 80:80
+    depends_on:
+      - server
